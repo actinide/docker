@@ -1,4 +1,4 @@
-# ELK Stack
+# ELK+NG Stack
 
 FROM ubuntu:trusty
 
@@ -58,7 +58,7 @@ ADD logstash.conf /etc/logstash/conf.d/logstash.conf
 ADD kibana /etc/init.d/kibana
 ADD kibana.conf /etc/nginx/sites-available/kibana.conf
 ADD google_auth_proxy.cfg /etc/google_auth_proxy.cfg
-ADD authorizedemails.txt /etc/authorizedemails.txt
+ADD authorizedemails.txt /opt/google_auth_proxy/authorizedemails.txt
 RUN \
   ln -s /etc/nginx/sites-available/kibana.conf /etc/nginx/sites-enabled/ && \
   mkdir /var/log/nginx/kibana && \
